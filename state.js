@@ -1,6 +1,6 @@
-const InvalidPositionError = require('./invalidPositionError');
-const InvalidSymbolError = require('./invalidSymbolError');
-const CellAlreadySetError = require('./cellAlreadySetError');
+const InvalidPositionError = require('./errors/invalidPositionError');
+const InvalidSymbolError = require('./errors/invalidSymbolError');
+const CellAlreadySetError = require('./errors/cellAlreadySetError');
 
 const X = 'X';
 const O = 'O';

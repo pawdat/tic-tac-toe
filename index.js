@@ -1,4 +1,4 @@
-const AppError = require('./appError');
+const AppError = require('./errors/appError');
 
 const symbols = [
   'X',
@@ -12,8 +12,9 @@ let state;
 let board;
 
 function start() {
-  process.stdin.setEncoding('utf-8');
+  console.clear();
 
+  process.stdin.setEncoding('utf-8');
   process.stdout.write('Welcome to TicTacToe :)\n');
   process.stdout.write('Set board size (default: 3): ');
 
@@ -30,7 +31,9 @@ function start() {
     const Board = require('./board');
     board = new Board(size);
 
+    console.clear();
     board.print();
+    state.onUpdate(console.clear);
     state.onUpdate(board.print.bind(board));
 
     promptUserInput();
