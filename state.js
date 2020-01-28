@@ -1,9 +1,7 @@
 const InvalidPositionError = require('./errors/invalidPositionError');
 const InvalidSymbolError = require('./errors/invalidSymbolError');
 const CellAlreadySetError = require('./errors/cellAlreadySetError');
-
-const X = 'X';
-const O = 'O';
+const Symbols = require('./symbols');
 
 module.exports = class State {
   constructor(size = 3) {
@@ -29,7 +27,7 @@ module.exports = class State {
 
     xOrO = xOrO.toUpperCase();
 
-    if (xOrO !== X && xOrO !== O) {
+    if (xOrO !== Symbols.X && xOrO !== Symbols.O) {
       throw new InvalidSymbolError(xOrO);
     }
 
